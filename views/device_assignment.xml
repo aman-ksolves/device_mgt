@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="device_assignment_form_view" model="ir.ui.view">
+            <field name="name">device_mgt.device.assignment.form</field>
+            <field name="model">device.assignment</field>
+            <field name="arch" type="xml">
+                <form>
+                    <group>
+                        <field name="name"/>
+                        <field name="device_id"/>
+                        <field name="employee_id"/>
+                        <field name="date_start"/>
+                        <field name="date_expire"/>
+                        <field name="state"/>
+                    </group>
+
+                </form>
+            </field>
+        </record>
+
+        <record id="device_assignment_tree_view" model="ir.ui.view">
+            <field name="name">device_mgt.device.assignment.tree</field>
+            <field name="model">device.assignment</field>
+            <field name="arch" type="xml">
+                <tree>
+
+                    <field name="name"/>
+                    <field name="device_id"/>
+                    <field name="employee_id"/>
+                    <field name="date_start"/>
+                    <field name="date_expire"/>
+                    <field name="state"/>
+                </tree>
+            </field>
+        </record>
+        <record id="device_assignment_act_window" model="ir.actions.act_window">
+            <field name="name">Device Model</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">device.assignment</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+    </data>
+</odoo>

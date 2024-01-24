@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="device_type_form_view" model="ir.ui.view">
+            <field name="name">device_mgt.device.type.form</field>
+            <field name="model">device.type</field>
+            <field name="arch" type="xml">
+                <form>
+                    <group>
+                        <field name="name"/>
+                        <field name="code"/>
+                        <field name="device_attribute_ids"/>
+                        <field name="device_model_ids"/>
+                        <field name="device_ids"/>
+                    </group>
+
+                </form>
+            </field>
+        </record>
+
+        <record id="device_type_tree_view" model="ir.ui.view">
+            <field name="name">device_mgt.device.type.tree</field>
+            <field name="model">device.type</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name="code"/>
+                    <field name="device_attribute_ids"/>
+                    <field name="device_model_ids"/>
+                    <field name="device_ids"/>
+                </tree>
+            </field>
+        </record>
+        <record id="device_type_act_window" model="ir.actions.act_window">
+            <field name="name">Device Model</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">device.type</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+    </data>
+</odoo>

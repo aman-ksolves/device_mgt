@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <menuitem id="menu_device_management" name="Device Management">
+
+        <menuitem id="menu_device" name="Device Menu">
+            <menuitem id="device_sub_menu" name="Devices"
+                      action="device_act_window"/>
+            <menuitem id="device_model_menu" name="Device Model"
+                      action="device_model_act_window"/>
+            <menuitem id="device_brand_model_menu" name="Device Brand"
+                      action="device_brand_act_window"/>
+            <menuitem id="device_type_model_menu" name="Device Type"
+                      action="device_type_act_window"/>
+            <menuitem id="device_attribute_model_menu" name="Device attribute"
+                      action="device_attribute_act_window"/>
+            <menuitem id="device_attribute_value_model_menu" name="Device attribute value"
+                      action="device_attribute_value_act_window"/>
+            <menuitem id="device_attribute_assignment_value_model_menu" name="Device attribute assignment"
+                      action="device_attribute_assignment_act_window"/>
+        </menuitem>
+
+        <menuitem id="device_assignment_root_menu" name="Device Assignment">
+            <menuitem id="device_assign_menu" name="Assign Device"
+                      action="device_assignment_act_window"/>
+        </menuitem>
+
+        <menuitem id="employee_root_menu" name="Employees">
+            <menuitem id="employee_menu" name="Employee"
+                      action="hr.open_view_employee_list_my"/>
+        </menuitem>
+
+    </menuitem>
+</odoo>
