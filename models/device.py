@@ -1,4 +1,4 @@
-from odoo import fields, models
+from odoo import _,fields, models
 
 
 class Device(models.Model):
@@ -29,10 +29,14 @@ class DeviceType(models.Model):
 
     name = fields.Char(string="device type name")
     code = fields.Char(string="code")
-    # sequence
+    sequence = fields.Char(string="Order Reference", readonly=True, default=lambda self: _('New'))
     device_attribute_ids = fields.One2many('device.attribute', 'device_type_id', string="device attribute ids")
     device_model_ids = fields.One2many('device.model', 'device_type_id', string="device model id")
     device_ids = fields.One2many('device.device', 'device_type_id', string="device_ids")
+
+    def create(self,vals):
+        vals['sequence'] = self.env['ir.sequence'].next_by_code('device.type') or _('New')
+        return super().create(vals)
 
 
 class DeviceBrand(models.Model):
