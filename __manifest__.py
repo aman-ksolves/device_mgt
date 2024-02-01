@@ -11,10 +11,18 @@
         'views/device_model_view.xml',
         'views/device_assignment.xml',
         'views/device_brand_view.xml',
+        'views/device_type_sequence.xml',
         'views/device_type_view.xml',
         'views/device_attribute_view.xml',
         'views/device_attribute_value_view.xml',
         'views/device_attribute_assignment_view.xml',
         'views/menu.xml',
     ],
+    'assets': {
+        'web.assets_backend': [
+            'device_mgt/static/src/xml/tree_view.xml',
+            'device_mgt/static/src/js/tree_button.js',
+        ],
+
+    },
 }
