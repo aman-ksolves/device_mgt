@@ -6,14 +6,26 @@
             <field name="model">device.type</field>
             <field name="arch" type="xml">
                 <form>
-                    <group>
-                        <field name="name"/>
-                        <field name="code"/>
-                        <field name="device_attribute_ids"/>
-                        <field name="device_model_ids"/>
-                        <field name="device_ids"/>
-                    </group>
+                    <header>
+                        <button string="Done" class="oe_highlight"/>
+                        <button string="Book Appointment" class="oe_highlight"/>
 
+                    </header>
+                    <sheet>
+                        <div class="oe_button_box" name="button_box">
+                            <button class="oe_stat_button" string="Appointments"
+                                    icon="fa-pencil-square-o">
+                            </button>
+                        </div>
+                        <group>
+                            <field name="sequence"/>
+                            <field name="name"/>
+                            <field name="code"/>
+                            <field name="device_attribute_ids"/>
+                            <field name="device_model_ids"/>
+                            <field name="device_ids"/>
+                        </group>
+                    </sheet>
                 </form>
             </field>
         </record>
@@ -23,6 +35,7 @@
             <field name="model">device.type</field>
             <field name="arch" type="xml">
                 <tree>
+                    <field name="sequence"/>
                     <field name="name"/>
                     <field name="code"/>
                     <field name="device_attribute_ids"/>
@@ -31,11 +44,15 @@
                 </tree>
             </field>
         </record>
+
         <record id="device_type_act_window" model="ir.actions.act_window">
             <field name="name">Device Model</field>
             <field name="type">ir.actions.act_window</field>
             <field name="res_model">device.type</field>
             <field name="view_mode">tree,form</field>
+            <!-- <field name="domain">[('code', '=', 'mob')]</field>-->
+            <!--<field name="context">{'code':'hello'}</field>-->
         </record>
+
     </data>
 </odoo>

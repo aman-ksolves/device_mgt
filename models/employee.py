@@ -18,3 +18,22 @@ class DeviceAssignment(models.Model):
     date_expire = fields.Date(string="expire date")
     state = fields.Selection([('new', 'New'), ('draft', 'Draft'), ('approved', 'Approved'),
                               ('returned', 'Returned'), ('rejected', 'Rejected')], string="state")
+
+    def changeState(self):
+        # if len(self.ids) == 0:
+        #     return False
+        return self.write({'state': 'approved'})
+        # if res:
+        #     print('Successful')
+        #     return True
+        # else:
+        #     return False
+
+        # return {
+        #     'type': 'ir.actions.client',
+        #     'tag': 'reload',
+        # }
+        # records = self.search([('id', 'in', self)])
+        # for rec in self:
+        #     rec.state = "Approved"
+        #     self.write({'state': 'Approved'})
